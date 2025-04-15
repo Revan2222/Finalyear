@@ -1,0 +1,298 @@
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.logo a {
+    font-family: 'Bebas Neue', sans-serif; /* Custom font */
+    font-size: 3em; /* Increased logo size */
+    color: #fff;
+    text-decoration: none;
+}
+#navbar h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+#nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+.chatbot-container {
+    display: flex;
+    height: 100vh;
+    padding-top: 60px; /* Prevents navbar overlap */
+    overflow: hidden; /* Prevents extra scroll */
+}
+
+/* Sidebar */
+#chat-sidebar {
+    width: 260px;
+    min-width: 260px; /* Prevent shrinking */
+    background: rgba(20, 20, 20, 0.9);
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Main Chat Area */
+#chat-main {
+    flex: 1;
+    min-width: 0; /* Prevents content from forcing horizontal scroll */
+    display: flex;
+    flex-direction: column;
+    background: rgba(10, 10, 10, 0.9);
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+#navbar {
+    width: 100%;
+    height: 60px; /* Keep the same height */
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* Navbar (Fixed & Transparent) */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+    z-index: 1000;
+    padding: 15px 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Navbar Container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Navigation Links (Right-aligned) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+/* Navbar Links */
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-links a:hover, .nav-links a.active {
+    color: #00bcd4;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth Page Transition */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* Navbar (Fixed & Transparent) */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+/* Navbar Container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo a {
+    font-size: 2.5em;
+    color: white;
+    text-decoration: none;
+}
+
+/* Navigation Links (Right-aligned) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+/* Navbar Links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Active & Hover Effect */
+.nav-links a:hover, .nav-links a.active {
+    color: #00bcd4;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth Page Transition */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    padding: 20px 0;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+  }
+  
+  .logo a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    color: #fff;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #00bcd4;
+  }
+  
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent dark for all pages */
+    z-index: 1000;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 50px;
+}
+
+.logo a {
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+}
+

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents | MiningBot</title>
+
+   <!-- CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/common/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/documents/documents.css') }}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="navbar-container">
+            <div class="logo"><a href="index.html">MiningBot</a></div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                <li><a href="{{ url_for('articles') }}">Articles</a></li>
+                <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            </ul>
+        </div>
+      </nav>
+    
+      <div class="container">
+        <h1 class="title">Mining Case Studies & Documents</h1>
+        <p class="disclaimer">Disclaimer: All documents are publicly sourced. Ownership and copyrights belong to respective authors and organizations.</p>
+    
+        <div class="pdf-grid">
+          <!-- 1 -->
+          <div class="pdf-box">
+            <img src="https://images.pexels.com/photos/31498922/pexels-photo-31498922/free-photo-of-aerial-view-of-heavy-equipment-in-brazilian-mine.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gramalote Mine">
+            <div class="pdf-info">
+              <h3>Environmental Impact Assessment: Gramalote Gold Mine, Colombia</h3>
+              <p>Examines the EIA conducted for the proposed Gramalote Gold Mine.</p>
+              <p><strong>Author:</strong> IISD</p>
+              <!-- Example for Case Study 1 -->
+<a href="{{ url_for('static', filename='pdfs/Casestudy-1.pdf') }}" target="_blank" class="view-btn">View</a>
+<a href="{{ url_for('static', filename='pdfs/Casestudy-1.pdf') }}" download class="download-btn">Download</a>
+
+            </div>
+          </div>
+    
+          <!-- 2 -->
+          <div class="pdf-box">
+            <img src="https://images.pexels.com/photos/9559876/pexels-photo-9559876.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Exxaro Water Risk">
+            <div class="pdf-info">
+              <h3>Water Risk Management: Exxaro Resources Ltd.</h3>
+              <p>Explores water risk strategies in mining by Exxaro Resources Ltd and Measure to prevent.</p>
+              <p><strong>Author:</strong> NYU Stern School of Business</p>
+<!-- Example for Case Study 2 -->
+<a href="{{ url_for('static', filename='pdfs/Casestudy-2.pdf') }}" target="_blank" class="view-btn">View</a>
+<a href="{{ url_for('static', filename='pdfs/Casestudy-2.pdf') }}" download class="download-btn">Download</a>
+
+            </div>
+          </div>
+    
+          <!-- 3 -->
+          <div class="pdf-box">
+            <img src="https://images.pexels.com/photos/2646237/pexels-photo-2646237.jpeg?auto=compress&cs=tinysrgb&w=600" alt="DRC Mining">
+            <div class="pdf-info">
+              <h3>Integration of Informal Cobalt Mining in the DRC</h3>
+              <p>Discusses formalizing the informal cobalt mining sector in the DRC and Integration process.</p>
+              <p><strong>Author:</strong> gcbhr.org</p>
+<!-- Example for Case Study 3 -->
+<a href="{{ url_for('static', filename='pdfs/Casestudy-3.pdf') }}" target="_blank" class="view-btn">View</a>
+<a href="{{ url_for('static', filename='pdfs/Casestudy-3.pdf') }}" download class="download-btn">Download</a>
+
+            </div>
+          </div>
+    
+          <!-- 4 -->
+          <div class="pdf-box">
+            <img src="https://images.pexels.com/photos/9034676/pexels-photo-9034676.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Phosphate Mining">
+            <div class="pdf-info">
+              <h3>Environmental Impacts of Phosphate Mining</h3>
+              <p>Assesses the environmental impacts of a phosphate mine.</p>
+              <p><strong>Author:</strong> BLM</p>
+<!-- Example for Case Study 4 -->
+<a href="{{ url_for('static', filename='pdfs/Casestudy-4.pdf') }}" target="_blank" class="view-btn">View</a>
+<a href="{{ url_for('static', filename='pdfs/Casestudy-4.pdf') }}" download class="download-btn">Download</a>
+
+            </div>
+          </div>
+    
+          <!-- 5 -->
+          <div class="pdf-box">
+            <img src="https://images.pexels.com/photos/2448946/pexels-photo-2448946.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marcopper Disaster">
+            <div class="pdf-info">
+              <h3>Marcopper Mines Disaster: Placer Dome Case Study</h3>
+              <p>Reviews mining disasters & environmental consequences - Mining Watch Canada.</p>
+              <p><strong>Author:</strong> arXiv / Mining Watch Canada</p>
+<!-- Example for Case Study 5 -->
+<a href="{{ url_for('static', filename='pdfs/Casestudy-5.pdf') }}" target="_blank" class="view-btn">View</a>
+<a href="{{ url_for('static', filename='pdfs/Casestudy-5.pdf') }}" download class="download-btn">Download</a>
+
+            </div>
+          </div>
+    
+          <!-- 6 -->
+          <div class="pdf-box">
+            <img src="https://images.pexels.com/photos/417070/pexels-photo-417070.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Raniganj Coalbelt">
+            <div class="pdf-info">
+              <h3>Informal Coal Mining: Raniganj Coalbelt, West Bengal</h3>
+              <p>Explores the informal coal mining sector in Raniganj.</p>
+              <p><strong>Author:</strong> Academia / Delve Database</p>
+<!-- Example for Case Study 6 -->
+<a href="{{ url_for('static', filename='pdfs/Casestudy-6.pdf') }}" target="_blank" class="view-btn">View</a>
+<a href="{{ url_for('static', filename='pdfs/Casestudy-6.pdf') }}" download class="download-btn">Download</a>
+
+            </div>
+          </div>
+    
+          <!-- 7 -->
+          <div class="pdf-box">
+            <img src="https://images.pexels.com/photos/3855962/pexels-photo-3855962.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jhamar Kotra">
+            <div class="pdf-info">
+              <h3>Phosphate Mining: Jhamar Kotra, Rajasthan</h3>
+              <p>Assesses phosphate mining impacts in Rajasthan and to Improve mining in Rajasthan.</p>
+              <p><strong>Author:</strong> IBM</p>
+<!-- Example for Case Study 7 -->
+<a href="{{ url_for('static', filename='pdfs/Casestudy-7.pdf') }}" target="_blank" class="view-btn">View</a>
+<a href="{{ url_for('static', filename='pdfs/Casestudy-7.pdf') }}" download class="download-btn">Download</a>
+
+            </div>
+          </div>
+    
+          <!-- 8 -->
+          <div class="pdf-box">
+            <img src="https://images.pexels.com/photos/1238864/pexels-photo-1238864.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jharia Coalfield">
+            <div class="pdf-info">
+              <h3>Environmental Impact Assessment: Jharia Coalfield, Jharkhand</h3>
+              <p>Evaluates coal mining impacts in Jharia, Jharkhand.</p>
+              <p><strong>Author:</strong> ResearchGate</p>
+<!-- Example for Case Study 8 -->
+<a href="{{ url_for('static', filename='pdfs/Casestudy8.pdf') }}" target="_blank" class="view-btn">View</a>
+<a href="{{ url_for('static', filename='pdfs/Casestudy-8.pdf') }}" download class="download-btn">Download</a>
+
+            </div>
+          </div>
+        </div>
+     <div class="video-container">
+        <h1 class="title">Real-Time Mining Informatic Videos</h1>
+
+        <!-- Video 1 -->
+        <div class="video-box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/L0Yy46xLUCw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Environmental Impact Assessment: Gramalote Gold Mine, Colombia</h3>
+                <p><strong>Description:</strong> Examines the EIA conducted for the proposed Gramalote Gold Mine in Colombia.</p>
+                <p><strong>Author:</strong> IISD</p>
+                <p><strong>License:</strong> Creative Commons (CC BY)</p>
+                <a href="https://youtu.be/L0Yy46xLUCw" target="_blank" class="view-btn">View on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dPs8lZ20ynU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Water Risk Management: Exxaro Resources Ltd.</h3>
+                <p><strong>Description:</strong> Explores water risk strategies in mining by Exxaro Resources Ltd.</p>
+                <p><strong>Author:</strong> NYU Stern School of Business</p>
+                <p><strong>License:</strong> Creative Commons (CC BY)</p>
+                <a href="https://youtu.be/dPs8lZ20ynU" target="_blank" class="view-btn">View on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uhixKjHqEB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Integration of Informal Cobalt Mining in the DRC</h3>
+                <p><strong>Description:</strong> Discusses formalizing the informal cobalt mining sector in the DRC.</p>
+                <p><strong>Author:</strong> gcbhr.org</p>
+                <p><strong>License:</strong> Creative Commons (CC BY)</p>
+                <a href="https://youtu.be/uhixKjHqEB0" target="_blank" class="view-btn">View on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TRhGNNtJDoY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Environmental Impacts of Phosphate Mining</h3>
+                <p><strong>Description:</strong> Assesses the environmental impacts of phosphate mining and its global consequences.</p>
+                <p><strong>Author:</strong> BLM</p>
+                <p><strong>License:</strong> Creative Commons (CC BY)</p>
+                <a href="https://youtu.be/TRhGNNtJDoY" target="_blank" class="view-btn">View on YouTube</a>
+            </div>
+        </div>
+
+    
+    
+    
+<script src="{{ url_for('static', filename='js/common/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/documents/documents.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mining Articles</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/articles/articles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/common/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+</head>
+<body>
+  <nav id="navbar">
+    <div class="navbar-container">
+        <div class="logo"><a href="index.html">MiningBot</a></div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+            <li><a href="{{ url_for('articles') }}">Articles</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+        </ul>
+    </div>
+  </nav>
+  
+
+
+  <h1>Latest Mining News-Articles</h1>
+
+  <div class="gallery">
+    {% set articles = [
+      {
+        "title": "AI-Driven Mining Robots Are Changing the Game",
+        "image": "/static/assets/images/articles/article1.jpg",
+        "desc": "Autonomous mining robots are reshaping the industry with smarter and safer operations.",
+        "link": "https://miningworld.com/how-ai-powered-robots-are-changing-ore-extraction/?utm_source=chatgpt.com"
+      },
+      {
+        "title": "Sustainable Lithium Mining Gains Momentum",
+        "image": "/static/assets/images/articles/article2.jpg",
+        "desc": "New sustainable technologies are improving lithium extraction and reducing waste.",
+        "link": "https://www.sciencedirect.com/science/article/abs/pii/S0301420719302430?utm_source=chatgpt.com"
+      },
+      {
+        "title": "Copper Demand Surges With Electric Vehicles",
+        "image": "/static/assets/images/articles/article3.jpg",
+        "desc": "The push toward EVs is driving demand and innovation in copper mining.",
+        "link": "https://www.ey.com/en_us/insights/mining-metals/coppers-role-in-the-energy-transition-grows-as-demand-surges?utm_source=chatgpt.com"
+      },
+      {
+        "title": "Drone Tech for Safer Mine Surveys",
+        "image": "/static/assets/images/articles/article4.jpg",
+        "desc": "Drone technology improves safety and data quality in remote site inspections.",
+        "link": "https://www.mdpi.com/2504-446X/4/3/34?utm_source=chatgpt.com"
+      },
+      {
+        "title": "Digital Twins in Mining Operations",
+        "image": "/static/assets/images/articles/article5.jpg",
+        "desc": "Digital twin tech is making mining smarter and more predictive.",
+        "link": "https://www.sciencedirect.com/science/article/pii/S2950555024000582?utm_source=chatgpt.com"
+      },
+      {
+        "title": "Women Breaking Barriers in Mining",
+        "image": "/static/assets/images/articles/article6.jpg",
+        "desc": "A rising number of women are making waves in traditionally male-dominated mining sectors.",
+        "link": "https://blogs.worldbank.org/en/energy/breaking-barriers-for-women-in-mining-?utm_source=chatgpt.com"
+      }
+    ] %}
+
+    {% for article in articles %}
+      <div class="article-card" onclick="openModal(`{{ article.title }}`, `{{ article.image }}`, `{{ article.desc }}`, `{{ article.link }}`)">
+        <img src="{{ article.image }}" alt="Article Image">
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.desc }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Modal -->
+  <div id="articleModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title" class="modal-title"></h2>
+      <img id="modal-image" src="" alt="Full Article Image" class="modal-img">
+      <p id="modal-desc" class="modal-desc"></p>
+      <a id="modal-link" href="#" target="_blank" class="modal-link">🔗 Read Full Article</a>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/common/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/articles/articles.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+[
+    {
+      "title": "Environmental Impact Assessment: Gramalote Gold Mine, Colombia",
+      "description": "EIA conducted for the Gramalote Gold Mine in Colombia, outlining methodologies and mitigation measures.",
+      "author": "IISD",
+      "owner": "IISD",
+      "pdf": "static/pdfs/gramalote.pdf",
+      "thumbnail": "static/thumbnails/gramalote.jpg"
+    },
+    {
+      "title": "Water Risk Management: Exxaro Resources Ltd.",
+      "description": "Strategies used by Exxaro Resources Ltd. to manage water risks in mining.",
+      "author": "NYU Stern School of Business",
+      "owner": "NYU Stern School of Business",
+      "pdf": "static/pdfs/exxaro_water.pdf",
+      "thumbnail": "static/thumbnails/exxaro.jpg"
+    },
+    {
+      "title": "Integration of Informal Cobalt Mining in the DRC",
+      "description": "Challenges and implications of integrating informal cobalt mining in the DRC.",
+      "author": "gcbhr.org",
+      "owner": "Enviro Solutions Initiative",
+      "pdf": "static/pdfs/cobalt_drc.pdf",
+      "thumbnail": "static/thumbnails/cobalt_drc.jpg"
+    },
+    {
+      "title": "Environmental Impacts of Phosphate Mining",
+      "description": "Environmental analysis of a proposed phosphate mine by the BLM.",
+      "author": "Bureau of Land Management",
+      "owner": "BLM",
+      "pdf": "static/pdfs/phosphate_mining.pdf",
+      "thumbnail": "static/thumbnails/phosphate.jpg"
+    },
+    {
+      "title": "Marcopper Mines Disaster: Placer Dome Case Study",
+      "description": "Case study highlighting environmental and social disasters from Marcopper Mines.",
+      "author": "arXiv",
+      "owner": "Mining Watch Canada",
+      "pdf": "static/pdfs/marcopper.pdf",
+      "thumbnail": "static/thumbnails/marcopper.jpg"
+    },
+    {
+      "title": "Informal Coal Mining: Raniganj Coalbelt, West Bengal",
+      "description": "Study of informal coal mining impacts in Raniganj, India.",
+      "author": "Delve Database",
+      "owner": "Delve Database",
+      "pdf": "static/pdfs/raniganj.pdf",
+      "thumbnail": "static/thumbnails/raniganj.jpg"
+    },
+    {
+      "title": "Phosphate Mining: Jhamar Kotra, Rajasthan",
+      "description": "Environmental review of phosphate mining at Jhamar Kotra.",
+      "author": "Indian Bureau of Mines",
+      "owner": "IBM",
+      "pdf": "static/pdfs/jhamar_kotra.pdf",
+      "thumbnail": "static/thumbnails/jhamar_kotra.jpg"
+    },
+    {
+      "title": "Environmental Impact Assessment: Jharia Coalfield, Jharkhand",
+      "description": "EIA of coal mining impacts in Jharia Coalfield, India.",
+      "author": "ResearchGate",
+      "owner": "ResearchGate",
+      "pdf": "static/pdfs/jharia.pdf",
+      "thumbnail": "static/thumbnails/jharia.jpg"
+    }
+  ]
+  

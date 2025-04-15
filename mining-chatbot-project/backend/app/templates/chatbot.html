@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MiningBot – Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/common/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot/chatbot.css') }}?v={{ random() }}">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="navbar-container">
+      <div class="logo"><a href="index.html">MiningBot</a></div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+        <li><a href="{{ url_for('articles') }}">Articles</a></li>
+        <li><a href="{{ url_for('documents') }}">Documents</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+    <!-- Chatbot Page -->
+  <div class="chatbot-page">
+    <aside class="sidebar">
+      <button class="new-chat-btn" onclick="startNewChat()">+ New Chat</button>
+      <ul id="chat-history"></ul>
+    </aside>
+
+    <div class="chat-area">
+      <div class="chat-header"><h2>Mining AI Chatbot</h2></div>
+      <div class="chat-box" id="chat-box"><p class="placeholder">Ask any mining-related question to get started.</p></div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Ask a mining-related question..." />
+        <button id="voice-btn" title="Voice Input 🎤">🎤</button>
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  
+
+  
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='js/chatbot/chatbot.js') }}?v={{ random() }}"></script>
+</body>
+</html>
