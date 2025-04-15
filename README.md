@@ -1,67 +1,32 @@
-Mining Chatbot Project
-Table of Contents
-Project Overview
+# **Mining Chatbot Project**
 
-Technologies Used
+## **Project Overview**
 
-Project Structure
+The **Mining Chatbot Project** is a web application designed to provide information about the mining industry. It features a chatbot that can interact with users, deliver real-time data, and respond to queries related to mining. The chatbot is built using **HTML**, **CSS**, **JavaScript** for the frontend, and **Flask** for the backend.
 
-Setup Instructions
+This project aims to help users access detailed case studies, articles, FAQs, documents, and real-time video content in the mining sector.
 
-Frontend Development
+## **Technologies Used**
 
-HTML
+- **Frontend**: 
+  - HTML5
+  - CSS3
+  - JavaScript (ES6+)
+  - Bootstrap (for responsiveness)
 
-CSS
+- **Backend**:
+  - Flask (Python Web Framework)
+  - APIs for chatbot interaction
+  - Web scraping (for mining data)
 
-JavaScript
+- **Deployment**: 
+  - AWS (for hosting and deploying the project)
+  - GitHub (for version control)
 
-Backend Development
+---
 
-Dependencies
+## **Project Structure**
 
-API Endpoints
-
-Usage
-
-Contributing
-
-License
-
-Project Overview
-The Mining Chatbot Project is a web application designed to provide information about the mining industry. It features a chatbot that can interact with users, deliver real-time data, and respond to queries related to mining. The chatbot is built using HTML, CSS, JavaScript for the frontend, and Flask for the backend.
-
-The project is aimed at helping users access detailed case studies, articles, FAQs, documents, and real-time video content in the mining sector.
-
-Technologies Used
-Frontend:
-
-HTML5
-
-CSS3
-
-JavaScript (ES6+)
-
-Bootstrap (for responsiveness)
-
-Backend:
-
-Flask (Python Web Framework)
-
-APIs for chatbot interaction
-
-Web scraping (for mining data)
-
-Deployment:
-
-AWS (for hosting and deploying the project)
-
-GitHub (for version control)
-
-Project Structure
-bash
-Copy
-Edit
 /mining-chatbot-project
 │
 ├── /assets
@@ -117,163 +82,29 @@ Edit
 ├── articles.html               # Articles page (Frontend)
 ├── faqs.html                   # FAQs page (Frontend)
 └── documents.html              # Documents page (Frontend)
-Setup Instructions
-Prerequisites
-Install Python (>= 3.8)
 
-Install Node.js (>= 14.0)
 
-Git for version control
+---
 
-1. Clone the Repository:
-bash
-Copy
-Edit
+## **Setup Instructions**
+
+### Prerequisites
+- Install **Python** (>= 3.8)
+- Install **Node.js** (>= 14.0)
+- **Git** for version control
+
+### 1. **Clone the Repository**:
+
 git clone https://github.com/your-username/mining-chatbot-project.git
-cd mining-chatbot-project
-2. Install Backend Dependencies:
-Create a virtual environment and activate it:
+   cd mining-chatbot-project
 
-bash
-Copy
-Edit
+   
 python3 -m venv venv
 source venv/bin/activate  # For Windows: venv\Scripts\activate
-Install the required Python packages:
 
-bash
-Copy
-Edit
+
 pip install -r backend/requirements.txt
-3. Install Frontend Dependencies:
-Inside the project folder, run:
 
-bash
-Copy
-Edit
 npm install
-4. Run the Application:
-Start the Flask backend:
-
-bash
-Copy
-Edit
 python backend/app/server.py
-Open the project in your browser (default URL: http://127.0.0.1:5000).
 
-Frontend Development
-HTML
-The frontend structure is built with HTML to define the layout and content of each page, such as the Home page, Chatbot interface, and others. You can find HTML files in the root directory:
-
-index.html
-
-chatbot.html
-
-articles.html
-
-faqs.html
-
-documents.html
-
-CSS
-The CSS files are used for styling the pages. There are separate CSS files for each module:
-
-/css/common/style.css: Common styles shared across all pages.
-
-/css/chatbot/chatbot.css: Specific styles for the chatbot UI.
-
-Other CSS files are specific to pages like Home, Articles, and FAQs.
-
-JavaScript
-JavaScript adds interactivity to the website. The chatbot.js file handles:
-
-Sending and receiving messages in the chatbot.
-
-API interactions for dynamic data fetching.
-
-Event handling for user actions (e.g., sending messages).
-
-Backend Development
-The backend is built with Flask, a lightweight Python web framework. The backend handles requests like:
-
-Chatbot API: Responding to user messages using AI models or predefined responses.
-
-Web scraping: Fetching data from external mining websites or case studies.
-
-Serving documents: Providing downloadable PDFs and videos.
-
-Flask Structure:
-/backend/app/server.py: Main Flask server file that handles routing and API requests.
-
-/backend/templates: Contains HTML templates for rendering pages like the homepage and chatbot.
-
-/backend/static: Static files like images and CSS specific to the backend.
-
-Dependencies
-Backend:
-Flask: Python web framework
-
-Flask-Cors: For enabling cross-origin requests.
-
-Requests: For making HTTP requests (useful for web scraping).
-
-BeautifulSoup: For parsing and scraping HTML content from external websites.
-
-Install them by running:
-
-bash
-Copy
-Edit
-pip install -r backend/requirements.txt
-Frontend:
-Bootstrap: For responsive design.
-
-Vite: Development server for building and serving frontend assets.
-
-Axios: For making HTTP requests from the frontend to the backend API.
-
-API Endpoints
-1. GET /get_chatbot_response:
-Description: Handles chatbot queries. Takes a user message and returns a response.
-
-Request:
-
-Body: { "message": "User's question" }
-
-Response:
-
-{ "reply": "Chatbot's response" }
-
-2. GET /scrape_mining_data:
-Description: Scrapes data from external mining websites and returns relevant information.
-
-Usage
-Accessing the Chatbot:
-
-Open the project in a browser: http://127.0.0.1:5000
-
-Type in a query and hit "Send" to interact with the chatbot.
-
-Adding Content:
-
-Add or modify articles, FAQs, or documents in the relevant directories (e.g., articles.html, documents.html).
-
-Scraping Data:
-
-The backend scrapes mining data via the /scrape_mining_data API and displays it on the frontend as part of the Chatbot or other modules.
-
-Contributing
-If you'd like to contribute to this project:
-
-Fork the repository
-
-Create a new branch: git checkout -b feature-name
-
-Make changes and commit them: git commit -am 'Add new feature'
-
-Push your branch: git push origin feature-name
-
-Create a pull request.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
