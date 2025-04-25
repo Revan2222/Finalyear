@@ -6,10 +6,9 @@ import google.generativeai as genai
 import os
 import random
 
-# 🔧 Initialize Flask app
 app = Flask(__name__)
 CORS(app)
-app.secret_key = 'e4f8b9b6b1a3f72a4d2bcb1c8c71e9f8b8b78e7d78e1c4c29c8918e2a4f12e3a'
+app.secret_key = 'AIzaSyDXRsAAH-54PT6659jIO1jJCmCJpPB7eh8'
 
 # 📁 Correct SQLite DB Path
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -31,8 +30,8 @@ class Contact(db.Model):
 with app.app_context():
     db.create_all()
 
-# 🔐 Gemini API Configuration
-genai.configure(api_key="AIzaSyCaos0WS5pg03AXdZJbN-MZLTJ9I7YMRBQ")
+# 🔑 Gemini API Key Setup
+genai.configure(api_key="AIzaSyDXRsAAH-54PT6659jIO1jJCmCJpPB7eh8")
 
 # 📄 ROUTES
 @app.route('/')
@@ -59,6 +58,10 @@ def faqs():
 def documents():
     return render_template('documents.html')
 
+@app.route('/mining-locations')
+def mining_locations():
+    return render_template('mining-locations.html')  # <-- 🆕 New Map Route
+
 # ✅ Contact Form Submission
 @app.route('/submit-contact-form', methods=['POST'])
 def submit_contact_form():
@@ -82,7 +85,6 @@ def submit_contact_form():
         flash("❌ Submission failed. Please try again.", "error")
         return redirect("/")
 
-# 🚀 Chatbot Route (Gemini 1.5 Pro)
 @app.route('/submit-chat', methods=['POST'])
 def submit_chat():
     try:
@@ -100,6 +102,7 @@ def submit_chat():
     except Exception as e:
         traceback.print_exc()
         return jsonify({'response': f"⚠️ Server error: {str(e)}"}), 500
+
 @app.route('/admin/feedback')
 def view_feedback():
     feedbacks = Contact.query.all()

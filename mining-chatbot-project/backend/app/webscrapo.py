@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 
 def scrape_mining_articles():
-    url = "https://www.mining-technology.com/features/"  # Replace with your actual target
+    url = "https://www.mining-technology.com/features/" 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     }

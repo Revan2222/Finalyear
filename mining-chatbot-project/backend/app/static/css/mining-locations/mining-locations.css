@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../../assets/images/mining-bg.jpg') center/cover no-repeat;
+    color: #fff;
+  }
+  
+  .map-container {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  #map {
+    height: 600px;
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+  }
+  

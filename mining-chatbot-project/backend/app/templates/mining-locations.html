@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <title>Mining Locations Worldwide</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search/dist/leaflet-search.css" />
+    <link rel="stylesheet" href="/css/map.css" />
+    <style>
+        /* Full-screen map */
+        #map {
+            height: 100vh;  /* Full screen height */
+            width: 100vw;   /* Full screen width */
+            margin-top: 0;
+        }
+
+        /* Custom Navbar */
+        #navbar {
+            background-color: #333;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-container .logo a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .navbar-container .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin-left: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="#">MiningBot</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                <li><a href="{{ url_for('articles') }}">Articles</a></li>
+                <li><a href="{{ url_for('documents') }}">Documents</a></li>
+                <li><a href="{{ url_for('mining_locations') }}">Mining Locations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-search/dist/leaflet-search.js"></script>
+    <script>
+        // Mining industry locations worldwide (over 50 locations)
+        const miningLocations = [
+            { name: "Jharia Coalfield", country: "India", lat: 23.7401, lng: 86.4146, type: "Coal", description: "One of the largest coalfields in India, with significant coal production." },
+            { name: "Bailadila Iron Ore Mine", country: "India", lat: 18.674, lng: 81.192, type: "Iron Ore", description: "A large iron ore mine in Chhattisgarh with high production capacity." },
+            { name: "Panna Diamond Mine", country: "India", lat: 24.716, lng: 80.188, type: "Diamond", description: "A diamond mining region known for its valuable diamond production." },
+            { name: "Kolar Gold Fields", country: "India", lat: 12.957, lng: 78.275, type: "Gold", description: "Historic gold mining location in India, known for its gold reserves." },
+            { name: "Koraput Bauxite Mine", country: "India", lat: 18.813, lng: 82.708, type: "Bauxite", description: "One of the major bauxite mines located in Odisha." },
+            { name: "Escondida Copper Mine", country: "Chile", lat: -23.03, lng: -68.012, type: "Copper", description: "The largest copper mine in the world, located in Chile." },
+            { name: "Grasberg Mine", country: "Indonesia", lat: -4.054, lng: 137.717, type: "Gold", description: "The world's second-largest gold mine, located in Papua." },
+            { name: "Olimpiada Gold Mine", country: "Russia", lat: 55.682, lng: 92.864, type: "Gold", description: "One of the largest gold mines in Russia, located in the Siberian region." },
+            { name: "Mount Keith Nickel Mine", country: "Australia", lat: -27.12, lng: 120.51, type: "Nickel", description: "A major nickel mine in Western Australia." },
+            { name: "Carajás Mine", country: "Brazil", lat: -5.832, lng: -50.225, type: "Iron Ore", description: "One of the largest iron ore mines globally, located in the Amazon region." },
+            { name: "Kinross Tasiast Gold Mine", country: "Mauritania", lat: 20.383, lng: -15.827, type: "Gold", description: "A large gold mine in Mauritania with high potential for expansion." },
+            { name: "Cerro Verde Mine", country: "Peru", lat: -16.227, lng: -71.468, type: "Copper", description: "A large copper mine in Peru, with one of the highest copper production rates." },
+            { name: "Severstal's Vorkutaugol", country: "Russia", lat: 67.457, lng: 64.074, type: "Coal", description: "A major coal mine in the Russian Arctic region." },
+            { name: "BHP Billiton's Minera Escondida", country: "Chile", lat: -23.03, lng: -68.012, type: "Copper", description: "The world's largest copper mine, located in Chile." },
+            { name: "Bingham Canyon Mine", country: "USA", lat: 40.776, lng: -112.087, type: "Copper", description: "A large open-pit copper mine in the United States, also known as the Kennecott Mine." },
+            { name: "Shaanxi Coal and Chemical", country: "China", lat: 38.3, lng: 109.0, type: "Coal", description: "One of the major coal mines in China, with a long history of mining." },
+            { name: "Zijin Mining", country: "China", lat: 35.0, lng: 113.5, type: "Gold", description: "A leading Chinese gold mine with significant reserves." },
+            { name: "Mponeng Gold Mine", country: "South Africa", lat: -26.457, lng: 27.740, type: "Gold", description: "The world's deepest gold mine, located in South Africa." },
+            { name: "Big Bell Mine", country: "Australia", lat: -28.090, lng: 118.581, type: "Gold", description: "An active gold mine in Western Australia with high production." },
+            { name: "La Colosa Gold Project", country: "Colombia", lat: 4.552, lng: -75.325, type: "Gold", description: "A significant gold project located in the Colombian Andes." },
+            { name: "Panguna Copper Mine", country: "Papua New Guinea", lat: -6.209, lng: 155.307, type: "Copper", description: "A large copper mine located in Papua New Guinea, known for its rich reserves." },
+            { name: "Diavik Diamond Mine", country: "Canada", lat: 64.42, lng: -110.58, type: "Diamond", description: "A diamond mine in Canada, producing high-quality diamonds." },
+            { name: "Kwale Mineral Sands", country: "Kenya", lat: -4.10, lng: 39.60, type: "Titanium", description: "A significant titanium and zirconium mine in Kenya." },
+            { name: "Cerro Lindo Mine", country: "Peru", lat: -13.879, lng: -75.038, type: "Zinc", description: "A major zinc mine in Peru, producing high-grade zinc." },
+            { name: "Baiyin Chengtong Copper Mine", country: "China", lat: 36.059, lng: 106.405, type: "Copper", description: "A large copper mine located in China's Gansu province." },
+            { name: "Antamina Mine", country: "Peru", lat: -9.306, lng: -77.075, type: "Copper", description: "One of the largest copper mines in Peru, with a significant amount of copper production." },
+            { name: "Nana Kofi Gold Mine", country: "Ghana", lat: 5.55, lng: -2.5, type: "Gold", description: "A gold mine in Ghana with substantial output." }
+        ];
+
+        // Initialize the map
+        const map = L.map('map').setView([22.9734, 78.6569], 2);  // Centered over the world
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Create markers for each mining location
+        miningLocations.forEach(loc => {
+            const marker = L.marker([loc.lat, loc.lng]).addTo(map);
+            marker.bindPopup(`
+                <b>${loc.name}</b><br>
+                Type: ${loc.type}<br>
+                Country: ${loc.country}<br>
+                <br>
+                <b>Description:</b><br>
+                ${loc.description}
+            `);
+        });
+
+        // Add search functionality
+        const searchControl = new L.Control.Search({
+            layer: L.layerGroup(),
+            propertyName: 'name',  // Search by 'name'
+            zoom: 10,
+            marker: {
+                icon: new L.Icon.Default()
+            }
+        }).addTo(map);
+    </script>
+</body>
+</html>
